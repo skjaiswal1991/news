@@ -11,11 +11,9 @@ import { useState } from 'react'
 import useSound from 'use-sound';
 
 const Newspage = ({ page, category }: any) => {
-    console.log(page)
     let indedPage = page && page[0].description.split('\n')
     const [audio, setAudio] = useState<String>('')
     const [play, { stop }] = useSound(page && `http://localhost:3030/uploads/${page[0].postslug}.mp3`);
-    console.log(`http://localhost:3030/uploads/${page && page[0].postslug}.mp3`)
     useEffect(() => {
 
         async function initload() {

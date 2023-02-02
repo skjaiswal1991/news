@@ -12,7 +12,6 @@ const classprops = {
 const Mainnews = ({ news }: any) => {
 
     let fourNews = news && news.slice(0, 4)
-    console.log(news)
     return (
         <div className="container-fluid">
             <div className="row">

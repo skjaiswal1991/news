@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import Head from 'next/head'
 import Footer from "../footer/footer";
 import Header from "../header/header";
 const sections = [
@@ -18,30 +16,27 @@ const sections = [
 
 
 const Default = (props: any) => {
-    const googleTranslateElementInit = () => {
-        new window.google.translate.TranslateElement(
-            {
-                pageLanguage: "en",
-                autoDisplay: false
-            },
-            "google_translate_element"
-        );
-    };
-    useEffect(() => {
-        var addScript = document.createElement("script");
-        addScript.setAttribute(
-            "src",
-            "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        );
-        document.body.appendChild(addScript);
-        window.googleTranslateElementInit = googleTranslateElementInit;
-    }, []);
+    // const googleTranslateElementInit = () => {
+    //     new window.google.translate.TranslateElement(
+    //         {
+    //             pageLanguage: "en",
+    //             autoDisplay: false
+    //         },
+    //         "google_translate_element"
+    //     );
+    // };
+    // useEffect(() => {
+    //     var addScript = document.createElement("script");
+    //     addScript.setAttribute(
+    //         "src",
+    //         "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    //     );
+    //     document.body.appendChild(addScript);
+    //     window.googleTranslateElementInit = googleTranslateElementInit;
+    // }, []);
     return (
         <>
-            <Head>
 
-            </Head>
-            <div id="google_translate_element"></div>
             <Header sections={sections} title="news14" />
 
 
