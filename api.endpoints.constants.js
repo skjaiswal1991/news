@@ -1,6 +1,6 @@
 
-const NEWS_SERVER = 'http://localhost:3020'
-const ROOT_SERVER = 'http://localhost:3000'
+const NEWS_SERVER = 'http://3.17.187.189:3020/'
+const ROOT_SERVER = 'http://3.17.187.189:3020/'
 
 export default {
 
