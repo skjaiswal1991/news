@@ -1,14 +1,14 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = {
-  nextConfig,
-  reactStrictMode: true,
+  /* config options here */
   images: {
     domains: ['d35y6w71vgvcg1.cloudfront.net'], //make it 'your-domain.com'
   },
-};
+  reactStrictMode: true,
+}
+
+module.exports = nextConfig
 
 
