@@ -1,6 +1,6 @@
 
-const NEWS_SERVER = 'http://localhost:3020/'
-const ROOT_SERVER = 'http://localhost:3020/'
+const NEWS_SERVER = 'http://3.21.248.174:3020/'
+const ROOT_SERVER = 'http://3.21.248.174:3000/'
 
 export default {
 
@@ -12,8 +12,4 @@ export default {
 
   GET_POST_END_POINT: '/posts',
   GET_AUDIOR_END_POUNT: '/playaudio'
-
-
-
-
 };
