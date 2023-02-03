@@ -1,5 +1,6 @@
 import Link from "next/link"
 import dateFormat from "dateformat";
+import Slider from "../../slider/slider";
 const classprops = {
     activeItem: {
         height: '500px'
@@ -16,7 +17,8 @@ const Mainnews = ({ news }: any) => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-7 px-0">
-                    <div className="owl-carousel main-carousel position-relative">
+                    <Slider sliderdata={fourNews} />
+                    {/* <div className="owl-carousel main-carousel position-relative">
                         {fourNews && fourNews.map((n: any, i: any) =>
                             <div key={i} className="position-relative overflow-hidden" style={classprops.activeItem}>
                                 <img className="img-fluid h-100" src={n.image} style={{ objectFit: 'cover' }} />
@@ -32,7 +34,7 @@ const Mainnews = ({ news }: any) => {
                                 </div>
                             </div>
                         )}
-                    </div>
+                    </div> */}
                 </div>
                 <div className="col-lg-5 px-0">
                     <div className="row mx-0">

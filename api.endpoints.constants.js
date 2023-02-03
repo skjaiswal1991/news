@@ -1,6 +1,15 @@
+let NEWS_SERVER = ''
+let ROOT_SERVER = ''
+if (false) {
+  NEWS_SERVER = 'http://3.21.248.174:3020/'
+  ROOT_SERVER = 'http://3.21.248.174:3000/'
 
-const NEWS_SERVER = 'http://3.21.248.174:3020/'
-const ROOT_SERVER = 'http://3.21.248.174:3000/'
+} else {
+  NEWS_SERVER = 'http://localhost:3020/'
+  ROOT_SERVER = 'http://localhost:3000/'
+}
+
+
 
 export default {
 
