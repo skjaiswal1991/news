@@ -100,6 +100,7 @@ class dataLayer {
   * Audio File generate
   */
   //http://localhost:3030/playaudio/delhi-high-court-dismisses-review-petition-on-appointment-of-cji
+
   getAudioGenerate(object) {
     console.log(object, "object");
     return new Promise((resolve, reject) => {
