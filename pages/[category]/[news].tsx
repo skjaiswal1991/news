@@ -20,7 +20,6 @@ export async function getStaticProps({ params, preview = true, previewData }: an
     const object = { postslug: params.news }
     let getData = await dataLayer.getPostBySlug(object)
     let news = await getData.data
-    console.log(news, "news");
 
     if (getData)
         return {

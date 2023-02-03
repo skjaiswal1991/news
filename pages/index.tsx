@@ -11,7 +11,6 @@ export interface home {
 }
 
 export default function Home({ page }: home) {
-  console.log("page", page)
   return (
     <>
       <Homepage page={page} />
