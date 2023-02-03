@@ -10,7 +10,7 @@ const Header = ({ sections }: any) => {
             <div className="row align-items-center bg-white py-3 px-lg-5">
                 <div className="col-lg-4">
                     <Link href="/" className="navbar-brand p-0 d-none d-lg-block">
-                        <h1 className="m-0 display-4 text-uppercase text-primary">tej<span className="text-secondary font-weight-normal">AKHABAR</span></h1>
+                        <h1 className="m-0 display-4 text-uppercase text-secondary">Tej<span className="text-primary font-weight-normal">AKHABAR</span></h1>
                     </Link>
                 </div>
                 <div className="col-lg-8 text-center text-lg-right">
