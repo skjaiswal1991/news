@@ -1,6 +1,6 @@
 let NEWS_SERVER = ''
 let ROOT_SERVER = ''
-if (false) {
+if (true) {
   NEWS_SERVER = 'http://3.21.248.174:3020/'
   ROOT_SERVER = 'http://3.21.248.174:3000/'
 
