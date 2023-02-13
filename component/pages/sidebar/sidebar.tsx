@@ -1,6 +1,5 @@
 import Link from "next/link"
 import dateFormat from "dateformat";
-import Image from "next/image";
 import Imagesection from "../../image/image";
 const Siderbar = ({ news }: any) => {
 

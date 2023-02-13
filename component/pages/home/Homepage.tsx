@@ -1,6 +1,3 @@
-import { darken } from '@mui/material';
-import Head from 'next/head'
-import Script from 'next/script'
 import BreakingNews from "./common/breakingNews";
 import Featurenews from "./common/featureNews";
 import Latestnews from './common/latestNews';
