@@ -1,0 +1,50 @@
+{
+    "international": {
+        "newsUrl": "https://www.bhaskarhindi.com/international",
+        "categoryslug": "international",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    },
+    "sports": {
+        "newsUrl": "https://www.bhaskarhindi.com/sports",
+        "categoryslug": "sports",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    },
+    "national": {
+        "newsUrl": "https://www.bhaskarhindi.com/national",
+        "categoryslug": "national",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    },
+    "delhi": {
+        "newsUrl": "https://www.bhaskarhindi.com/state/delhi",
+        "categoryslug": "delhi",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    },
+    "politics": {
+        "newsUrl": "https://www.bhaskarhindi.com/politics",
+        "categoryslug": "politics",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    },
+    "cities": {
+        "newsUrl": "https://www.bhaskarhindi.com/cities",
+        "categoryslug": "cities",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    },
+    "education": {
+        "newsUrl": "https://www.bhaskarhindi.com/education",
+        "categoryslug": "education",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    },
+    "entertainment": {
+        "newsUrl": "https://www.bhaskarhindi.com/entertainment",
+        "categoryslug": "entertainment",
+        "baseUrl": "https://www.bhaskarhindi.com",
+        "publisher": "bhaskarhindi"
+    }
+}

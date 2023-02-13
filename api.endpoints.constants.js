@@ -9,8 +9,6 @@ if (true) {
   ROOT_SERVER = 'http://localhost:3000/'
 }
 
-
-
 export default {
 
   HOME: ROOT_SERVER,
@@ -20,5 +18,8 @@ export default {
   BASE_URL_NEWS: NEWS_SERVER,
 
   GET_POST_END_POINT: '/posts',
+  GET_POST_BY_CATEGORY_END_POINT: '/postbycategory',
+  GET_POST_BY_CATEGORY_NAME_END_POINT: '/postbycategoryname',
+  GET_CATEGORY_END_POINT: '/category',
   GET_AUDIOR_END_POUNT: '/playaudio'
 };

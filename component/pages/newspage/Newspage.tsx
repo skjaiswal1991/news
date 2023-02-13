@@ -4,79 +4,80 @@ import Link from "next/link"
 import { useEffect } from 'react'
 import Player from '../../audio/audio'
 import Commentform from '../form/comment'
-import BreakingNews from '../home/common/breakingNews'
+
+import TrandingNews from '../home/common/trandingNews'
 import Sidebar from '../sidebar/sidebar'
-import dataLaye from '../../../data-laye'
+import Imagesection from '../../image/image'
+import dateFormat from "dateformat";
+
+// import dataLaye from '../../../data-laye'
 import { useState } from 'react'
-import useSound from 'use-sound';
+// import useSound from 'use-sound';
 
-const Newspage = ({ page, category }: any) => {
+const Newspage = ({ page, category, releatednew }: any) => {
+    console.log("releatednew++", releatednew)
     let indedPage = page && page[0].description.split('\n')
-    const [audio, setAudio] = useState<String>('')
-    const [play, { stop }] = useSound(page && `http://localhost:3030/uploads/${page[0].postslug}.mp3`);
-    useEffect(() => {
+    // const [audio, setAudio] = useState<String>('')
+    // const [play, { stop }] = useSound(page && `http://localhost:3030/uploads/${page[0].postslug}.mp3`);
+    // useEffect(() => {
 
-        async function initload() {
-            let result = await dataLaye.getAudioGenerate({ slug: page[0].postslug })
-            if (result.status == 200)
-                setAudio(`http://localhost:3030/uploads/${page && page[0].postslug}.mp3`)
-        }
+    //     async function initload() {
+    //         let result = await dataLaye.getAudioGenerate({ slug: page[0].postslug })
+    //         if (result.status == 200)
+    //             setAudio(`http://localhost:3030/uploads/${page && page[0].postslug}.mp3`)
+    //     }
 
-        initload()
+    //     initload()
 
-        // if (page && page[0].postslug != 'undefined') {
-        //     console.log("if", page && page[0].postslug)
-        //     setAudio(`http://localhost:3030/uploads/${page && page[0].postslug}.mp3`)
-        // } else {
-        //     console.log("else", page && page[0].postslug)
-        // }
+    //     // if (page && page[0].postslug != 'undefined') {
+    //     //     console.log("if", page && page[0].postslug)
+    //     //     setAudio(`http://localhost:3030/uploads/${page && page[0].postslug}.mp3`)
+    //     // } else {
+    //     //     console.log("else", page && page[0].postslug)
+    //     // }
 
-    }, [])
+    // }, [])
 
-    return (
-        <>
-            {/* <BreakingNews page={page} /> */}
-
-            <div className="container-fluid">
-
-                {audio}
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8">
-                            {/* <!-- News Detail Start --> */}
-                            <div className="position-relative mb-3">
-                                <img className="img-fluid w-100" src={page && page[0].image} style={{ objectFit: 'cover' }} />
-                                <div className="bg-white border border-top-0 p-4">
-                                    <div className="mb-3">
-                                        <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                            href="">{category}</a>
-                                        <a className="text-body" href="">Jan 01, 2045</a>
-                                        {audio && <Player url={audio} />}
-                                        <button onClick={() => play()}>play!</button>
-                                        <button onClick={() => stop()}>stop!</button>
-                                    </div>
-                                    <h1 className="mb-3 text-secondary text-uppercase font-weight-bold">{page && page[0].title}</h1>
-                                    {indedPage && indedPage.map((ne: any, i: any) =>
-                                        <p style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: page && ne }} />
-                                    )}
-
+    return (<>
+        <TrandingNews news={releatednew} themes="" />
+        <div className="container-fluid">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-8">
+                        {/* <!-- News Detail Start --> */}
+                        <div className="position-relative mb-3">
+                            <Imagesection width={700} height={462} className="img-fluid w-100" src={page && page[0].image} style={{ objectFit: 'cover' }} />
+                            <div className="bg-white border border-top-0 p-4">
+                                <div className="mb-3">
+                                    <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">{category}</a>
+                                    <a className="text-body" href="">{dateFormat(page && page[0].publishDate, "mmmm d, yyyy")}</a>
+                                    {/* {audio && <Player url={audio} />}
+                                    <button onClick={() => play()}>play!</button>
+                                    <button onClick={() => stop()}>stop!</button> */}
                                 </div>
-                                <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                                    <div className="d-flex align-items-center">
-                                        <Link target="_blank" href={`${page && page[0].sourceUrl}`}>
-                                            <span>Published By:  {page && page[0].publishname}</span>
-                                        </Link>
-                                    </div>
-                                    <div className="d-flex align-items-center">
-                                        <span className="ml-3"><i className="far fa-eye mr-2"></i>1</span>
-                                        {/* <span className="ml-3"><i className="far fa-comment mr-2"></i>123</span> */}
-                                    </div>
+                                <h1 className="mb-3 text-secondary text-uppercase font-weight-bold">{page && page[0].title}</h1>
+                                {indedPage && indedPage.map((ne: any, i: any) =>
+                                    <p key={i} style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: page && ne }} />
+                                )}
+
+                            </div>
+                            <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div className="d-flex align-items-center">
+                                    <Link target="_blank" href={`${page && page[0].sourceUrl}`}>
+                                        <span>Published By:  {page && page[0].publishname}</span>
+                                    </Link>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <span className="ml-3"><i className="far fa-eye mr-2"></i>1</span>
+                                    {/* <span className="ml-3"><i className="far fa-comment mr-2"></i>123</span> */}
                                 </div>
                             </div>
-                            {/* <!-- News Detail End -->
+                        </div>
+                        {/* <!-- News Detail End -->
 
                                 <!-- Comment List Start --> */}
-                            {/* <div className="mb-3">
+                        {/* <div className="mb-3">
                                 <div className="section-title mb-0">
                                     <h4 className="m-0 text-uppercase font-weight-bold">3 Comments</h4>
                                 </div>
@@ -112,19 +113,17 @@ const Newspage = ({ page, category }: any) => {
                                     </div>
                                 </div>
                             </div> */}
-                            {/* <!-- Comment List End -->
+                        {/* <!-- Comment List End -->
 
                             <!-- Comment Form Start --> */}
-                            {/* <Commentform /> */}
-                            {/* <!-- Comment Form End --> */}
-                        </div>
-                        <Sidebar news={page} />
+                        {/* <Commentform /> */}
+                        {/* <!-- Comment Form End --> */}
                     </div>
+                    <Sidebar news={releatednew} />
                 </div>
             </div>
-
-
-        </>
+        </div>
+    </>
 
     )
 }

@@ -12,7 +12,7 @@ class dataLayer {
     this.axiosBussiness.defaults.headers.patch["Cache-Control"] = "public, max-age=31536000, immutable";
     this.axiosBussiness.interceptors.request.use(function (config) {
 
-      const token = "asjdjkadahdhakdkadaksdkahds"//localStorage.getItem("AccessToken");
+      const token = false //"asjdjkadahdhakdkadaksdkahds"//localStorage.getItem("AccessToken");
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
@@ -78,7 +78,77 @@ class dataLayer {
         });
     });
   }
+
+  /*
+   * Get Post data by Cateogry Slug
+   */
+
+  getCategory() {
+    return new Promise((resolve, reject) => {
+      this.axiosBussiness
+        .get(CONSTANTS.GET_CATEGORY_END_POINT)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          }
+          reject(error);
+        });
+    });
+  }
+  /*
+   * Get Post data by Cateogry Slug
+   */
+
+  getPostByCategorySlug(object) {
+    return new Promise((resolve, reject) => {
+      this.axiosBussiness
+        .post(CONSTANTS.GET_POST_BY_CATEGORY_NAME_END_POINT, object)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          }
+          reject(error);
+        });
+    });
+  }
+
+  /*
+  * Get Post data by Cateogry ID
+  */
+
+  getPostByCategoryID(object) {
+    return new Promise((resolve, reject) => {
+      this.axiosBussiness
+        .post(CONSTANTS.GET_POST_BY_CATEGORY_END_POINT, object)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          }
+          reject(error);
+        });
+    });
+  }
+
+  /*
+  * Get sigle Post data by post Slug
+  */
   getPostBySlug(object) {
+    console.log("getPostBySlug", CONSTANTS.GET_POST_END_POINT);
     return new Promise((resolve, reject) => {
       this.axiosBussiness
         .post(CONSTANTS.GET_POST_END_POINT, object)

@@ -1,6 +1,21 @@
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Loaderimage from './loader.svg'
+import dataLayer from '../../data-laye'
 const Footer = ({ title }: any) => {
+
+    const [category, setCategory] = useState([])
+
+    const getCategory = async () => {
+        let cat = await dataLayer.getCategory();
+        if (cat.status == 200) {
+            let category = await cat.data;
+            setCategory(category)
+        }
+    }
+    useEffect(() => {
+        getCategory()
+    }, [])
     return (
         <>
             <div className="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
@@ -47,27 +62,9 @@ const Footer = ({ title }: any) => {
                     <div className="col-lg-4 col-md-6 mb-5">
                         <h5 className="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
                         <div className="m-n1">
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Politics</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Business</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Corporate</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Business</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Health</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Education</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Science</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Business</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Foods</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Entertainment</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Travel</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Lifestyle</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Politics</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Business</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Corporate</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Business</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Health</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Education</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Science</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Business</Link>
-                            <Link href="" className="btn btn-sm btn-secondary m-1">Foods</Link>
+                            {category && category.map((cat: any, i: any) =>
+                                <Link key={i} href={cat.categorySlug} className="btn btn-sm btn-secondary m-1">{cat.categoryTitle}</Link>
+                            )}
                         </div>
                     </div>
                     {/* <div className="col-lg-3 col-md-6 mb-5">

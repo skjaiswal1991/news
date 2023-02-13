@@ -1,9 +1,11 @@
 import Link from "next/link"
 import dateFormat from "dateformat";
 import Image from "next/image";
+import Imagesection from "../../image/image";
 const Siderbar = ({ news }: any) => {
 
-    const trandingNews = news && news.slice(20, 30)
+    const trandingNews = news.slice(0, 10) || []
+    console.log("trandingNews", trandingNews)
 
     return (
 
@@ -48,7 +50,7 @@ const Siderbar = ({ news }: any) => {
                     <h4 className="m-0 text-uppercase font-weight-bold">Advertisement</h4>
                 </div>
                 <div className="bg-white text-center border border-top-0 p-3">
-                    <a href=""><img className="img-fluid" src="img/news-800x500-2.jpg" alt="" /></a>
+                    <Link href=""><img className="img-fluid" src="img/news-800x500-2.jpg" alt="" /></Link>
                 </div>
             </div>
             {/* <!-- Ads End -->
@@ -60,15 +62,15 @@ const Siderbar = ({ news }: any) => {
                 </div>
                 {trandingNews && trandingNews.map((n: any, i: any) =>
 
-                    <div className="bg-white border border-top-0 p-3">
+                    <div key={i} className="bg-white border border-top-0 p-3">
                         <div className="d-flex align-items-center bg-white mb-3" style={{ height: '110px' }}>
-                            <Image height="110" width="110" className="" src={n.image} alt="" />
+                            <Imagesection height="110" width="110" className="" src={n.image || `/no-image.png`} alt="" />
                             <div className="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div className="mb-2">
-                                    <a className="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">{n.category[0].categoryTitle}</a>
-                                    <a className="text-body" href=""><small>{dateFormat(n.publishDate, "mmm d, yyyy")}</small></a>
+                                    <Link className="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">{n && n.category[0].categoryTitle}</Link>
+                                    <Link className="text-body" href=""><small>{dateFormat(n.publishDate, "mmm d, yyyy")}</small></Link>
                                 </div>
-                                <a className="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{n.title.slice(0, 45) + '...'}</a>
+                                <Link className="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{n.title.slice(0, 45) + '...'}</Link>
                             </div>
                         </div>
 

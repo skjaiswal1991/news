@@ -1,0 +1,38 @@
+{
+    "menudata": [
+        {
+            "title": "Home",
+            "path": "/",
+            "chield": false
+        },
+        {
+            "title": "National",
+            "path": "/national",
+            "chield": false
+        },
+        {
+            "title": "Sports",
+            "path": "/sports",
+            "chield": false
+        },
+        {
+            "title": "state",
+            "path": "/sports",
+            "chield": true,
+            "submenu": [
+                {
+                    "title": "Madhya Pradesh",
+                    "path": "/madhya-pradesh"
+                },
+                {
+                    "title": "Uttar Pradesh",
+                    "path": "/uttar-pradesh"
+                },
+                {
+                    "title": "Delhi",
+                    "path": "/delhi"
+                }
+            ]
+        }
+    ]
+}
