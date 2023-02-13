@@ -13,7 +13,7 @@ RUNNING=$?
 if [ "${RUNNING}" -ne 0 ]; then
   pm2 start npm --name "news" -- start
 else
-  pm2 reload firstnextcicd
+  pm2 reload news
 fi;
 
 #save pm2
